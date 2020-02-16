@@ -35,7 +35,7 @@ class RelayClient:
 if __name__ == '__main__':
     relay = RelayClient(17)
     relay.turn_on()
-    time.sleep(3)
+    time.sleep(4)
     relay.turn_off()
     relay.cleanup()
     
