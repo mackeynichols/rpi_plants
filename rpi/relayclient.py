@@ -1,5 +1,6 @@
 #! python3
 # relayclient.py - class(es) to manage relays connected to an rpi
+# Typically, these are connected to GPIO ports 4 and 17
 import RPi.GPIO as GPIO
 import time
 import logging
@@ -33,7 +34,7 @@ class RelayClient:
         
 
 if __name__ == '__main__':
-    relay = RelayClient(17)
+    relay = RelayClient(4)
     relay.turn_on()
     time.sleep(4)
     relay.turn_off()

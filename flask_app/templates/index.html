@@ -1,11 +1,15 @@
 <html>
     <head></head>
     <body>
+        <div>
+            <p>TEMPERATURE: {{ temp }}C</p>
+            <p>HUMIDITY: {{ humidity }}%</p>
+        </div>
         <form action="/on">
-            <input type="submit" value="Turn On" />
+            <input type="submit" value="Turn On Pumps" />
         </form>
         <form action="/off">
-            <input type="submit" value="Turn Off" />
+            <input type="submit" value="Turn Off Pumps" />
         </form>
     </body>
 </html>
