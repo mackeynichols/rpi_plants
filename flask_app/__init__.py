@@ -2,15 +2,17 @@
 # basic flask app to control the rpi
 
 from flask import Flask, render_template, redirect, url_for
-from rpi import relayclient, temphumiditysensorclient
+from rpi import relayclient, temphumiditysensorclient, cameraclient
 app = Flask(__name__)
 
 relay4 = relayclient.RelayClient(4)
 relay17 = relayclient.RelayClient(17)
 temphumiditysensor27 = temphumiditysensorclient.Sensor(27)
+cameraclient = cameraclient.Camera()
 
 @app.route('/')
 def index():
+    cameraclient.capture()
     return render_template('index.html', temp = temphumiditysensor27.get_measurements()['temperature'], humidity = temphumiditysensor27.get_measurements()['humidity'])
 
 @app.route('/on')
