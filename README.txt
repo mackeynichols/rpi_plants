@@ -4,6 +4,11 @@ General
 ===
 GPIO.BCM means you're looking at GPIO pins' GPIO numbers ... not their "BOARD" number
 
+Starting the flask app
+===
+export FLASK_APP=flask_app
+flask run --host 0.0.0.0
+
 Temperature and Humidity Sensor
 ===
 The sensors are called DHT11s

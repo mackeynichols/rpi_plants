@@ -9,6 +9,7 @@ class Camera:
     def __init__(self):
         self.camera = picamera.PiCamera()
         self.camera.resolution = (1024, 768)
+        self.dir = os.getcwd()
 
         logging.basicConfig(format='%(asctime)s-%(levelname)s-%(message)s',
                             level=logging.DEBUG,
@@ -17,7 +18,7 @@ class Camera:
         logging.info("Pi Camera initialized")
 
     def capture(self):
-        filename = 'plants.jpg'
+        filename = self.dir + '/flask_app/static/plants.jpg'
         os.remove(filename)
         self.camera.capture( filename )
         logging.info("Picture taken: " + filename)

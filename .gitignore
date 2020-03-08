@@ -2,4 +2,6 @@
 ./logs/*
 venv
 C
+*.log
+*.jpg
 *__pycache__/*
