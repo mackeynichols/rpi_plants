@@ -26,8 +26,19 @@ class RelayClient:
         
     def turn_off(self):
         GPIO.output(self.pin, GPIO.HIGH)
+
+    def get_status(self):
+        return GPIO.input(self.pin)
+
         
     #def cycle(turn_on_for, wait_for):
+
+    def switch(self):
+        if self.get_status(): # If switch is off, switch it on 
+            self.turn_on()
+        elif not self.get_status(): # If switch is on, turn it off
+            self.turn_off()
+        
 
     def cleanup(self):
         GPIO.cleanup()
@@ -35,8 +46,8 @@ class RelayClient:
 
 if __name__ == '__main__':
     relay = RelayClient(4)
-    relay.turn_on()
+    relay.switch()
     time.sleep(4)
-    relay.turn_off()
+    relay.switch()
     relay.cleanup()
     

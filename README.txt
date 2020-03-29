@@ -8,6 +8,16 @@ Starting the flask app
 ===
 export FLASK_APP=flask_app
 flask run --host 0.0.0.0
+or
+nohup flask run --host 0.0.0.0 &
+... if you want to start the server in the background
+
+Stopping the flask app
+===
+ps -ef | grep python
+... finds the PID
+kill PID
+... ends the process, stopping the flask app
 
 Temperature and Humidity Sensor
 ===
